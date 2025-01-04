@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.3...v0.0.3)
+
+### 🏡 Chore
+
+- Change package name ([a41b7cf](https://github.com/thespielplatz/nuxt-auth/commit/a41b7cf))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.2
 
 
