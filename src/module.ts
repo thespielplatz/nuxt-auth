@@ -6,7 +6,7 @@ import '@nuxt/schema'
 import type { Nuxt } from 'nuxt/schema'
 
 import { AuthUserSchema } from './runtime/server/lib/AuthUserSchema'
-import isDevelopmentMode from './runtime/server/utils/isDevelopmentMode'
+import { isDevelopmentMode } from './runtime/server/utils/isDevelopmentMode'
 
 export { AuthUserSchema }
 
