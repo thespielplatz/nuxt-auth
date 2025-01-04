@@ -5,10 +5,10 @@ import { defu } from 'defu'
 import '@nuxt/schema'
 import type { Nuxt } from 'nuxt/schema'
 
-import { type AuthUserType, AuthUserSchema } from './runtime/server/lib/AuthUserSchema'
+import { AuthUserSchema } from './runtime/server/lib/AuthUserSchema'
 import isDevelopmentMode from './runtime/server/utils/isDevelopmentMode'
 
-export { type AuthUserType, AuthUserSchema }
+export { AuthUserSchema }
 
 declare module '@nuxt/schema' {
   interface RuntimeConfig {
