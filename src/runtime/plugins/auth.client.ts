@@ -4,13 +4,13 @@ import Auth from '../lib/Auth'
 
 declare module '#app' {
   interface NuxtApp {
-    $auth: () => Auth;
+    $auth: Auth;
   }
 }
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $auth: () => Auth;
+    $auth: Auth;
   }
 }
 
