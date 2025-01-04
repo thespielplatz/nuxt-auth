@@ -47,5 +47,9 @@
     "typescript": "~5.7.2",
     "vitest": "^2.1.8",
     "vue-tsc": "^2.2.0"
-  }
+  },
+  "peerDependencies": {
+    "consola": "^3.3.3",
+    "defu": "^6.1.4"
+  }  
 }
