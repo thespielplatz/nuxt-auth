@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.5...v0.0.6)
+
+### 🩹 Fixes
+
+- Extend the type of $auth in NuxtApp ([60c4a81](https://github.com/thespielplatz/nuxt-auth/commit/60c4a81))
+- Only export AuthUserSchema ([ead5958](https://github.com/thespielplatz/nuxt-auth/commit/ead5958))
+
+### 🏡 Chore
+
+- **release:** V0.0.5 ([fbff0f5](https://github.com/thespielplatz/nuxt-auth/commit/fbff0f5))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.5
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.4...v0.0.5)
