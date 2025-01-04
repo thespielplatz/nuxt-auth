@@ -2,7 +2,7 @@ import type { IUserHandler } from '../lib/IUserHandler'
 
 let _userHandler: IUserHandler | null = null
 
-export default () => {
+export const useUserHandler = () => {
   return {
     set: (userHandler: IUserHandler) => {
       _userHandler = userHandler
