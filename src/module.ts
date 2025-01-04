@@ -2,11 +2,21 @@ import { defineNuxtModule, createResolver, addPlugin, addServerScanDir } from '@
 import consola from 'consola'
 import { defu } from 'defu'
 
+import '@nuxt/schema'
 import type { Nuxt } from 'nuxt/schema'
 
 import isDevelopmentMode from './runtime/server/utils/isDevelopmentMode'
 
-// Module options TypeScript interface definition
+declare module '@nuxt/schema' {
+  interface RuntimeConfig {
+    authModule: ModuleOptions
+  }
+
+  interface PublicRuntimeConfig {
+    authModule: ModuleOptions['public']
+  }
+}
+
 export interface ModuleOptions {
   issuer: string
   audience: string
@@ -56,6 +66,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.runtimeConfig = defu(nuxt.options.runtimeConfig, {
       authModule: inlineOptions,
     })
+
     nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, {
       authModule: inlineOptions.public,
     })
