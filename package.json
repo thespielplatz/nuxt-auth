@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-auth",
+  "name": "@tsp/nuxt-auth",
   "version": "0.0.2",
   "description": "DB agnostic authentication module for Nuxt based on jwt",
   "repository": "github:thespielplatz/nuxt-auth",
