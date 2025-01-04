@@ -7,7 +7,7 @@ export const createAccessToken = async ({ userId }: { userId: string }) => {
       sessionId: nanoid(),
     },
     issuer: useRuntimeConfig().authModule.issuer,
-    audience:  useRuntimeConfig().authModule.audience,
+    audience: useRuntimeConfig().authModule.audience,
     expirationTime: useRuntimeConfig().authModule.accessTokenExpirationTime,
   })
 }

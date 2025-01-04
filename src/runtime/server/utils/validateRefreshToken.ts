@@ -4,8 +4,7 @@ export const validateRefreshToken = async ({ jwt }: { jwt: string }): Promise<Re
   const payload = await useJwt().validate({
     jwt,
     issuer: useRuntimeConfig().authModule.issuer,
-    audience:  useRuntimeConfig().authModule.audience,
+    audience: useRuntimeConfig().authModule.audience,
   })
-  
   return RefreshTokenPayload.parse(payload)
 }

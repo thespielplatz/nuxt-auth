@@ -1,4 +1,4 @@
-import { setCookie, H3Event } from 'h3'
+import { setCookie, type H3Event } from 'h3'
 import { z } from 'zod'
 
 const SameSiteSchema = z.union([
@@ -16,7 +16,7 @@ export const setRefreshTokenAsCookie = async ({ event, userId, sessionId }: { ev
   setCookie(event, refreshCookieConfig.name, newRefreshToken, {
     httpOnly: true,
     secure: refreshCookieConfig.secure,
-    expires: new Date(+ new Date() + 1000 * 60 * 60 * refreshCookieConfig.expiresInDays * 365),
+    expires: new Date(+new Date() + 1000 * 60 * 60 * refreshCookieConfig.expiresInDays * 365),
     sameSite: SameSiteSchema.parse(refreshCookieConfig.sameSite),
   })
 }

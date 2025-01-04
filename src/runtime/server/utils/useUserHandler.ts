@@ -1,8 +1,8 @@
-import { type IUserHandler } from '../lib/IUserHandler'
+import type { IUserHandler } from '../lib/IUserHandler'
 
 let _userHandler: IUserHandler | null = null
 
-export default (userHandler?: IUserHandler) => {
+export default () => {
   return {
     set: (userHandler: IUserHandler) => {
       _userHandler = userHandler

@@ -1,8 +1,7 @@
-import fs from 'fs'
-import path from 'path'
-import { nanoid } from 'nanoid'
+import fs from 'node:fs'
+import path from 'node:path'
+import type { KeyObject } from 'node:crypto'
 import consola from 'consola'
-import { KeyObject } from 'crypto'
 import * as jose from 'jose'
 
 const Algorithm_RSA256 = 'RS256'
@@ -38,7 +37,7 @@ export default class Jwt {
       const privateKeyFileData = fs.readFileSync(privateKeyFile, 'utf8')
       keyPair = {
         publicKey: await jose.importSPKI(publicKeyFileData, Algorithm_RSA256),
-        privateKey: await jose.importPKCS8(privateKeyFileData, Algorithm_RSA256)
+        privateKey: await jose.importPKCS8(privateKeyFileData, Algorithm_RSA256),
       }
       consola.info(`Loaded JWT keys from at ${keyPath}`)
     }
@@ -46,19 +45,19 @@ export default class Jwt {
     return new Jwt(keyPair)
   }
 
-  async createJwt({ 
+  async createJwt({
     payload,
     issuer,
     audience,
-    expirationTime
-  }: { 
+    expirationTime,
+  }: {
     payload: jose.JWTPayload,
     issuer: string,
     audience: string,
-    expirationTime: string
+    expirationTime: string,
   }) {
     return new jose.SignJWT(payload)
-      .setProtectedHeader({ alg: Algorithm_RSA256})
+      .setProtectedHeader({ alg: Algorithm_RSA256 })
       .setIssuedAt()
       .setIssuer(issuer)
       .setAudience(audience)
@@ -69,19 +68,19 @@ export default class Jwt {
   async validate({
     jwt,
     audience,
-    issuer
-  }: { 
-    jwt: string, 
-    audience: string, 
-    issuer: string 
+    issuer,
+  }: {
+    jwt: string,
+    audience: string,
+    issuer: string
   }) {
     const { payload } = await jose.jwtVerify(jwt, this.keypair.publicKey, {
       issuer,
       audience,
     })
-    if (payload.exp == null || payload.exp * 1000 < + new Date()) {
+    if (payload.exp == null || payload.exp * 1000 < +new Date()) {
       throw new jose.errors.JWTExpired('Authorization expired.', payload)
     }
     return payload
-  }  
+  }
 }

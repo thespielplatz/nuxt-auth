@@ -6,7 +6,7 @@ let auth: Auth
 
 export default defineNuxtPlugin({
   name: 'auth-plugin',
-  async setup(nuxtApp) {
+  async setup() {
     consola.info('Installing Auth Plugin')
     auth = new Auth()
     return {

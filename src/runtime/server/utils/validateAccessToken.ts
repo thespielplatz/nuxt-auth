@@ -4,8 +4,7 @@ export const validateAccessToken = async ({ jwt }: { jwt: string }): Promise<Acc
   const payload = await useJwt().validate({
     jwt,
     issuer: useRuntimeConfig().authModule.issuer,
-    audience:  useRuntimeConfig().authModule.audience,
+    audience: useRuntimeConfig().authModule.audience,
   })
-  
   return AccessTokenPayload.parse(payload)
 }

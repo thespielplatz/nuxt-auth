@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const { userId, sessionId } = await validateRefreshToken({ jwt: refreshToken})
+    const { userId, sessionId } = await validateRefreshToken({ jwt: refreshToken })
     await setRefreshTokenAsCookie({ event, userId, sessionId })
     const accessToken = await createAccessToken({ userId: userId })
 

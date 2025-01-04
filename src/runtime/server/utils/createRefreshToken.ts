@@ -1,4 +1,4 @@
-import { type RefreshTokenPayload } from '../lib/RefreshTokenPayload'
+import type { RefreshTokenPayload } from '../lib/RefreshTokenPayload'
 
 export const createRefreshToken = async ({ userId, sessionId }: { userId: string, sessionId: string }) => {
   const payload: RefreshTokenPayload = {
@@ -9,7 +9,7 @@ export const createRefreshToken = async ({ userId, sessionId }: { userId: string
   return useJwt().createJwt({
     payload,
     issuer: useRuntimeConfig().authModule.issuer,
-    audience:  useRuntimeConfig().authModule.audience,
+    audience: useRuntimeConfig().authModule.audience,
     expirationTime: useRuntimeConfig().authModule.refreshTokenExpirationTime,
   })
 }

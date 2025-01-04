@@ -2,9 +2,9 @@ import type { EventHandler, EventHandlerRequest, H3Event } from 'h3'
 import type { AuthUserType } from '../lib/AuthUserSchema'
 
 export const defineLoggedInEventHandler = <T extends EventHandlerRequest, D>(
-  handler: (event: H3Event<T>, user: AuthUserType) => Promise<D> // Update handler type to include user parameter
+  handler: (event: H3Event<T>, user: AuthUserType) => Promise<D>, // Update handler type to include user parameter
 ): EventHandler<T, D> =>
-  defineEventHandler<T>(async event => {
+  defineEventHandler<T>(async (event) => {
     const authorization = getHeader(event, 'Authorization')
     if (!authorization) {
       throw createError({
@@ -23,7 +23,7 @@ export const defineLoggedInEventHandler = <T extends EventHandlerRequest, D>(
           message: 'User not found',
         })
       }
-    } catch (err) {
+    } catch {
       throw createError({
         status: 401,
         message: 'Invalid access token',

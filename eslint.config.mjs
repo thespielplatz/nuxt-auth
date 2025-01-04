@@ -15,6 +15,10 @@ export default createConfigForNuxt({
     ],
   },
 })
-  .append(
-    // your custom flat config here...
+  .append({
+    rules: {
+      '@stylistic/brace-style': 'off',
+      '@stylistic/member-delimiter-style': 'off',
+    },
+  },
   )

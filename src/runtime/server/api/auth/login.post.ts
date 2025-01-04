@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
   if (!user) {
     throw createError({
       status: 401,
-      message: "Login Denied",
-      statusMessage: "Login request Denied",
+      message: 'Login Denied',
+      statusMessage: 'Login request denied',
     })
   }
 
