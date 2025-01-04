@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Fix type definition of $auth ([60dfbed](https://github.com/thespielplatz/nuxt-auth/commit/60dfbed))
+- Fix isDevelopmentMode import ([44f13c3](https://github.com/thespielplatz/nuxt-auth/commit/44f13c3))
+
+### 🏡 Chore
+
+- Change function definition from default to name ([54a6dbe](https://github.com/thespielplatz/nuxt-auth/commit/54a6dbe))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.6
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.5...v0.0.6)
