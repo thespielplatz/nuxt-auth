@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addPlugin, addServerScanDir, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addPlugin, addServerScanDir } from '@nuxt/kit'
 import consola from 'consola'
 import { defu } from 'defu'
 
@@ -92,9 +92,4 @@ const registerAll = (nuxt: Nuxt) => {
   })
 
   addServerScanDir(resolve(runtimeDir, 'server'))
-
-  addTemplate({
-    src: resolve(runtimeDir, 'server/lib/AuthUserSchema.ts'),
-    filename: 'AuthUserSchema.ts',
-  })
 }
