@@ -1,11 +1,14 @@
-import { defineNuxtModule, createResolver, addPlugin, addServerScanDir } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addPlugin, addServerScanDir, addTemplate } from '@nuxt/kit'
 import consola from 'consola'
 import { defu } from 'defu'
 
 import '@nuxt/schema'
 import type { Nuxt } from 'nuxt/schema'
 
+import { type AuthUserType, AuthUserSchema } from './runtime/server/lib/AuthUserSchema'
 import isDevelopmentMode from './runtime/server/utils/isDevelopmentMode'
+
+export { type AuthUserType, AuthUserSchema }
 
 declare module '@nuxt/schema' {
   interface RuntimeConfig {
@@ -89,4 +92,9 @@ const registerAll = (nuxt: Nuxt) => {
   })
 
   addServerScanDir(resolve(runtimeDir, 'server'))
+
+  addTemplate({
+    src: resolve(runtimeDir, 'server/lib/AuthUserSchema.ts'),
+    filename: 'AuthUserSchema.ts',
+  })
 }

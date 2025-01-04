@@ -1,4 +1,5 @@
 import consola from 'consola'
+import { defineNitroPlugin, initJwt, isDevelopmentMode, useRuntimeConfig } from '#imports'
 
 export default defineNitroPlugin(() => {
   consola.info('Initializing Auth module')
