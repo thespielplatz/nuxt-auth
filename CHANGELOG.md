@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Renaming the AuthUserType to AuthUserSchema ([4046e9a](https://github.com/thespielplatz/nuxt-auth/commit/4046e9a))
+
+### 🏡 Chore
+
+- **release:** V0.0.7 ([d8d6f08](https://github.com/thespielplatz/nuxt-auth/commit/d8d6f08))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.7
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.6...v0.0.7)
