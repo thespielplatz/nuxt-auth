@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { createAccessToken, createError, createSessionId, defineEventHandler, readValidatedBody, setRefreshTokenAsCookie, useUserHandler } from '#imports'
 
 const InputSchema = z.object({
   accessKey: z.string(),
@@ -19,7 +20,7 @@ export default defineEventHandler(async (event) => {
   const sessionId = await createSessionId()
   await setRefreshTokenAsCookie({ event, userId: user.id, sessionId })
 
-  const accessToken = await createAccessToken({ userId: user.id })
+  const accessToken = await createAccessToken({ userId: user.id, sessionId })
 
   return {
     accessToken,

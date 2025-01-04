@@ -1,3 +1,5 @@
+import { createAccessToken, createError, defineEventHandler, deleteCookie, getCookie, setRefreshTokenAsCookie, useRuntimeConfig, validateRefreshToken } from '#imports'
+
 export default defineEventHandler(async (event) => {
   const refreshCookieName = useRuntimeConfig().authModule.refreshCookie.name
   const refreshToken = getCookie(event, refreshCookieName)
@@ -12,7 +14,7 @@ export default defineEventHandler(async (event) => {
   try {
     const { userId, sessionId } = await validateRefreshToken({ jwt: refreshToken })
     await setRefreshTokenAsCookie({ event, userId, sessionId })
-    const accessToken = await createAccessToken({ userId: userId })
+    const accessToken = await createAccessToken({ userId: userId, sessionId })
 
     return {
       accessToken,
