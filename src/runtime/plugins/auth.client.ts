@@ -2,6 +2,8 @@ import consola from 'consola'
 
 import Auth from '../lib/Auth'
 
+import { defineNuxtPlugin } from '#app'
+
 declare module '#app' {
   interface NuxtApp {
     $auth: Auth;

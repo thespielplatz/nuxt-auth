@@ -1,4 +1,5 @@
 import type { RefreshTokenPayload } from '../lib/RefreshTokenPayload'
+import { useJwt, useRuntimeConfig } from '#imports'
 
 export const createRefreshToken = async ({ userId, sessionId }: { userId: string, sessionId: string }) => {
   const payload: RefreshTokenPayload = {

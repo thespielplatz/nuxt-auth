@@ -1,8 +1,9 @@
-import type { EventHandler, EventHandlerRequest, H3Event } from 'h3'
-import type { AuthUserType } from '../lib/AuthUserSchema'
+import { createError, defineEventHandler, getHeader, type EventHandler, type EventHandlerRequest, type H3Event } from 'h3'
+import type { AuthUserSchema } from '../lib/AuthUserSchema'
+import { useUserHandler, validateAccessToken } from '#imports'
 
 export const defineLoggedInEventHandler = <T extends EventHandlerRequest, D>(
-  handler: (event: H3Event<T>, user: AuthUserType) => Promise<D>, // Update handler type to include user parameter
+  handler: (event: H3Event<T>, user: AuthUserSchema) => Promise<D>, // Update handler type to include user parameter
 ): EventHandler<T, D> =>
   defineEventHandler<T>(async (event) => {
     const authorization = getHeader(event, 'Authorization')

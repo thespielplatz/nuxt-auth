@@ -1,5 +1,6 @@
 import { setCookie, type H3Event } from 'h3'
 import { z } from 'zod'
+import { createRefreshToken, useRuntimeConfig } from '#imports'
 
 const SameSiteSchema = z.union([
   z.literal(true),

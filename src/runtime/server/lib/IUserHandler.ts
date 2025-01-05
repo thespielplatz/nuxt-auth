@@ -1,6 +1,6 @@
-import type { AuthUserType } from './AuthUserSchema'
+import type { AuthUserSchema } from './AuthUserSchema'
 
 export interface IUserHandler {
-  login(accessKey: string): AuthUserType | null
-  getUser(userId: string): AuthUserType | null
+  login(accessKey: string): AuthUserSchema | null
+  getUser(userId: string): AuthUserSchema | null
 }
