@@ -1,6 +1,6 @@
 {
   "name": "@thespielplatz/nuxt-auth",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "description": "DB agnostic authentication module for Nuxt based on jwt",
   "repository": "github:thespielplatz/nuxt-auth",

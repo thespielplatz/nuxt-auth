@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.9
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.8...v0.0.9)
+
+### 🩹 Fixes
+
+- AccessToken should use the sessionId from refreshToken ([86c0473](https://github.com/thespielplatz/nuxt-auth/commit/86c0473))
+- Add #imports ([322c7c5](https://github.com/thespielplatz/nuxt-auth/commit/322c7c5))
+
+### 🏡 Chore
+
+- **release:** V0.0.8 ([db896e2](https://github.com/thespielplatz/nuxt-auth/commit/db896e2))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.8
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.7...v0.0.8)
