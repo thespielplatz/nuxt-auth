@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { navigateTo } from '#app'
+import { navigateTo } from '#imports'
 
 const { $auth } = useNuxtApp()
 const accessKey = ref('')
