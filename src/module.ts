@@ -7,6 +7,10 @@ import type { Nuxt } from 'nuxt/schema'
 
 import { isDevelopmentMode } from './runtime/server/utils/isDevelopmentMode'
 
+import type { IUserHandler } from './runtime/server/lib/IUserHandler'
+
+export { type IUserHandler }
+
 declare module '@nuxt/schema' {
   interface RuntimeConfig {
     authModule: ModuleOptions

@@ -1,4 +1,4 @@
-import type { AuthUserSchema } from './AuthUserSchema'
+import type { AuthUserSchema } from '../lib/AuthUserSchema'
 
 export interface IUserHandler {
   login(accessKey: string): AuthUserSchema | null

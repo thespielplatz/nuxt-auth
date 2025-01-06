@@ -1,4 +1,4 @@
-import type { IUserHandler } from '../lib/IUserHandler'
+import type { IUserHandler } from './IUserHandler'
 
 let _userHandler: IUserHandler | null = null
 
