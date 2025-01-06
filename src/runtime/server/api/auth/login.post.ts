@@ -1,5 +1,6 @@
 import { z } from 'zod'
-import { createAccessToken, createError, createSessionId, defineEventHandler, readValidatedBody, setRefreshTokenAsCookie, useUserHandler } from '#imports'
+import { useUserHandler } from '../../utils/useUserHandler'
+import { createAccessToken, createError, createSessionId, defineEventHandler, readValidatedBody, setRefreshTokenAsCookie } from '#imports'
 
 const InputSchema = z.object({
   accessKey: z.string(),

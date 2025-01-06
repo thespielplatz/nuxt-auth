@@ -9,7 +9,7 @@ export const useUserHandler = () => {
     },
     get: (): IUserHandler => {
       if (!_userHandler) {
-        throw new Error('useUserHandler IUserHandler not set!')
+        throw new Error('UserHandler not set! Call useUserHandler().set(handler: IUserHandler) first.')
       }
       return _userHandler
     },
