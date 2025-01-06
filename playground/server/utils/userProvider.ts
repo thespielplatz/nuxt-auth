@@ -4,7 +4,7 @@ const user = {
   accessKey: 'test',
 }
 
-export const userHandler: IUserHandler = {
+export const userProvider: IUserProvider = {
   login(accessKey) {
     if (user.accessKey === accessKey) {
       return user

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { useUserHandler } from '../../utils/useUserHandler'
+import { useUserProvider } from '../../utils/useUserProvider'
 import { createAccessToken, createError, createSessionId, defineEventHandler, readValidatedBody, setRefreshTokenAsCookie } from '#imports'
 
 const InputSchema = z.object({
@@ -9,7 +9,7 @@ const InputSchema = z.object({
 export default defineEventHandler(async (event) => {
   const body = await readValidatedBody(event, InputSchema.parse)
 
-  const user = useUserHandler().get().login(body.accessKey)
+  const user = useUserProvider().get().login(body.accessKey)
   if (!user) {
     throw createError({
       status: 401,

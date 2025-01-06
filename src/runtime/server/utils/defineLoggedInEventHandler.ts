@@ -1,6 +1,7 @@
 import { createError, defineEventHandler, getHeader, type EventHandler, type EventHandlerRequest, type H3Event } from 'h3'
 import type { AuthUserSchema } from '../lib/AuthUserSchema'
-import { useUserHandler, validateAccessToken } from '#imports'
+import { useUserProvider } from './useUserProvider'
+import { validateAccessToken } from '#imports'
 
 export const defineLoggedInEventHandler = <T extends EventHandlerRequest, D>(
   handler: (event: H3Event<T>, user: AuthUserSchema) => Promise<D>, // Update handler type to include user parameter
@@ -17,7 +18,7 @@ export const defineLoggedInEventHandler = <T extends EventHandlerRequest, D>(
     let user
     try {
       const { userId } = await validateAccessToken({ jwt: authorization })
-      user = useUserHandler().get().getUser(userId)
+      user = useUserProvider().get().getUser(userId)
       if (!user) {
         throw createError({
           status: 500,
