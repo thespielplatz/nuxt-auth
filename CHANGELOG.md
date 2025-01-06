@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.9...v0.0.10)
+
+### 💅 Refactors
+
+- Export IUserHandler and implement example in playground ([92ba6f1](https://github.com/thespielplatz/nuxt-auth/commit/92ba6f1))
+- Small refactorings ([6ee5c09](https://github.com/thespielplatz/nuxt-auth/commit/6ee5c09))
+- Rename UserHandler to UserProvider ([73e5238](https://github.com/thespielplatz/nuxt-auth/commit/73e5238))
+
+### 📖 Documentation
+
+- Add roadmap ([ce9c173](https://github.com/thespielplatz/nuxt-auth/commit/ce9c173))
+- Extend readme ([1b1c249](https://github.com/thespielplatz/nuxt-auth/commit/1b1c249))
+- Update readme ([e117391](https://github.com/thespielplatz/nuxt-auth/commit/e117391))
+
+### 🏡 Chore
+
+- **release:** V0.0.9 ([88837da](https://github.com/thespielplatz/nuxt-auth/commit/88837da))
+- Remove UserAuthSchema export in module.ts ([02accb4](https://github.com/thespielplatz/nuxt-auth/commit/02accb4))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.9
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.8...v0.0.9)
