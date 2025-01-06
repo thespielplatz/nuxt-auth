@@ -40,7 +40,7 @@ export default class Auth {
 
   async redirectIfLoggedIn() {
     const loggedIn = await this.isLoggedIn()
-    console.log('redirectIfLoggedIn', loggedIn)
+    console.info('redirectIfLoggedIn', loggedIn)
     if (loggedIn) {
       await navigateTo(useRuntimeConfig().public.authModule.redirectOnLoggedIn, { replace: true })
     }
@@ -48,7 +48,7 @@ export default class Auth {
 
   async redirectIfLoggedOut() {
     const loggedIn = await this.isLoggedIn()
-    console.log('redirectIfLoggedOut', loggedIn)
+    console.info('redirectIfLoggedOut', loggedIn)
     if (!loggedIn) {
       await navigateTo(useRuntimeConfig().public.authModule.redirectOnLoggedOut, { replace: true })
     }
@@ -74,11 +74,11 @@ export default class Auth {
     try {
       const { accessToken } = await $fetch('/api/auth/refresh')
       this.accessToken = accessToken
-      console.log('refresh - success')
+      console.info('refresh - success')
       return true
     } catch {
       this.accessToken = null
-      console.log('refresh - nope')
+      console.info('refresh - fail')
       return false
     }
   }
