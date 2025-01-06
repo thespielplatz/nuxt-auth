@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.13
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.12...v0.0.13)
+
+### 🩹 Fixes
+
+- Add navigateTo due other project could not resolve navigateTo in installed module ([fc8a44b](https://github.com/thespielplatz/nuxt-auth/commit/fc8a44b))
+
+### 💅 Refactors
+
+- Console.log to info ([835d59f](https://github.com/thespielplatz/nuxt-auth/commit/835d59f))
+
+### 🏡 Chore
+
+- **release:** V0.0.12 ([85199ef](https://github.com/thespielplatz/nuxt-auth/commit/85199ef))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.12
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.11...v0.0.12)
