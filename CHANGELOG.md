@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.11...v0.0.12)
+
+### 🩹 Fixes
+
+- Change navigateTo import to #imports ([48df840](https://github.com/thespielplatz/nuxt-auth/commit/48df840))
+
+### 🏡 Chore
+
+- **release:** V0.0.11 ([500188a](https://github.com/thespielplatz/nuxt-auth/commit/500188a))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.11
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.10...v0.0.11)
