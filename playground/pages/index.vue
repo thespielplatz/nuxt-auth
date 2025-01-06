@@ -22,8 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import { navigateTo } from '#imports'
-
 const { $auth } = useNuxtApp()
 const accessKey = ref('')
 const status = ref('none')

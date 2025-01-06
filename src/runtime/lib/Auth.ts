@@ -1,3 +1,5 @@
+import { navigateTo, useRuntimeConfig } from '#imports'
+
 export default class Auth {
   accessToken: string | null = null
   initialRefreshPromise: Promise<boolean> | null = null
