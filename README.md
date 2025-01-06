@@ -9,33 +9,32 @@
     <img src="https://img.shields.io/npm/dm/@thespielplatz/nuxt-auth.svg?style=flat-square&colorA=202128&colorB=36936A" alt="Downloads">
   </a>
   <a href="https://github.com/thespielplatz/nuxt-auth/stargazers">
-    <img src="https://img.shields.io/github/stars/thespielplatz/nuxt-auth.svg?style=flat-square&colorA=202128&colorB=36936A" alt="Downloads">
+    <img src="https://img.shields.io/github/stars/thespielplatz/nuxt-auth.svg?style=flat-square&colorA=202128&colorB=36936A" alt="Stars">
   </a>
   <a href="https://github.com/thespielplatz/nuxt-auth/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/sidebase/nuxt-auth.svg?style=flat-square&colorA=202128&colorB=36936A" alt="License">
+    <img src="https://img.shields.io/github/license/thespielplatz/nuxt-auth.svg?style=flat-square&colorA=202128&colorB=36936A" alt="License">
   </a>
 </p>
 <!-- Badges End -->
 
-Simple DB agnostic Auth Module using jwt with a refresh token cookie and and access token in the authorization header
+A simple, database-agnostic authentication module for Nuxt, using JWT for access tokens (in the authorization header) and refresh tokens (stored in cookies).
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- Database agnostic
-- Refresh Token in cookie & Auth Token in header
+- Database-agnostic design
+- Secure token management: Refresh tokens in cookies & access tokens in headers
 
 ## Quick Setup
 
-### 1. Install the package as a dev dependency
+### 1. Install the package
 
 ```sh
 npm i -D @thespielplatz/nuxt-auth
 ```
 
-### 2. Add the modules to your `nuxt.config.ts`
+### 2. Add the module to your `nuxt.config.ts`
 
 ```ts
 export default defineNuxtConfig({
@@ -47,26 +46,26 @@ export default defineNuxtConfig({
 
 ### 1. Server
 
-#### Implement & register an `IUserProidver`
+#### Implement & Register an `IUserProvider`
 
-The auth modiule needs an `IUserProidver` implemented and set via `userUserProvider().set(...)`. See playground implementation via plugin: [Source](playground/server/plugins/registerUserProvider.ts)
+The auth module requires an `IUserProvider` implementation, which can be set using `useUserProvider().set(...)`. For reference, see the [playground implementation](playground/server/plugins/registerUserProvider.ts).
 
-#### Use `defineLoggedInEventHandler((event, user) => {})` to saveguard api routes
+#### Protect API Routes with `defineLoggedInEventHandler`
 
-When the user is authenticated from the IUserProvider the user object is passed to the
-event handler. See playground implementation: [Source](playground/server/api/user.get.ts)
+The `defineLoggedInEventHandler((event, user) => {})` function ensures only authenticated users can access certain routes. The user object, retrieved from `IUserProvider`, is passed to the handler. For an example, see the [playground implementation](playground/server/api/user.get.ts).
 
 ### 2. Frontend
 
-Everyhing is found in the provided `$auth` in `useNuxtApp()`
+All authentication-related features are accessible via `$auth` in `useNuxtApp()`.
 
 ```ts
 <script setup lang="ts">
 const { $auth } = useNuxtApp()
 ```
 
-The auth module automatically send a refresh request to the server to check for the logged in state. You should wait for this request to be finished, before dooing any server api 
-calls.
+The auth module automatically sends a refresh request to the server to verify the login state. Ensure this process is completed before making any server API calls.
+
+#### Check Login State
 
 ```ts
 onMounted(async () => {
@@ -74,7 +73,7 @@ onMounted(async () => {
 })
 ```
 
-#### Auto redirect, if logged in
+#### Redirect if Logged In
 
 ```ts
 onMounted(async () => {
@@ -82,11 +81,10 @@ onMounted(async () => {
 })
 ```
 
-- If this autoredirect is used, no wait via `$auth.isLoggedIn()` is necessary.
-- Login redirection path can be configured in the module variables. Default: `/dashboard`
+- No need to manually call `$auth.isLoggedIn()` if this redirection is used.
+- Configure the login redirection path in module variables (default: `/dashboard`).
 
-#### Auto redirect, if logged out
-
+#### Redirect if Logged Out
 
 ```ts
 onMounted(async () => {
@@ -94,8 +92,8 @@ onMounted(async () => {
 })
 ```
 
-- If this autoredirect is used, no wait via `$auth.isLoggedIn()` is necessary.
-- Logout redirection path can be configured in the module variables. Default: `/`
+- No need to manually call `$auth.isLoggedIn()` if this redirection is used.
+- Configure the logout redirection path in module variables (default: `/`).
 
 #### Login
 
@@ -104,8 +102,7 @@ const login = async () => {
   const success = await $auth.loginWithAccessKey(accessKey.value)
   if (success) {
     await navigateTo('/dashboard')
-  }
-  else {
+  } else {
     console.error('Login denied')
   }
 }
@@ -124,12 +121,14 @@ npm run dev:prepare
 npm run dev
 ```
 
-Start playing around in the playground 🎉
+Experiment with the module in the playground environment 🎉
 
-_(I was basically following the [nuxt module guide](https://nuxt.com/docs/guide/going-further/modules))_
+_(Inspired by the [Nuxt module guide](https://nuxt.com/docs/guide/going-further/modules))_
 
 ## Support
 
-If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️ 
+If you find this project helpful, please give it a star! ⭐
 
-And hey, why not [send some tip love?](https://thespielplatz.com/tip-jar)
+If you love it, consider forking it and taking it out for dinner. 🌟🍽️
+
+[Tip the developer](https://thespielplatz.com/tip-jar) ❤️
