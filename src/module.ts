@@ -34,6 +34,23 @@ export interface ModuleOptions {
   }
 }
 
+const defaults: ModuleOptions = {
+  issuer: 'not-set',
+  audience: 'not-set',
+  refreshTokenExpirationTime: '28 days',
+  accessTokenExpirationTime: '5 min',
+  refreshCookie: {
+    name: 'refresh_token',
+    secure: true,
+    sameSite: 'lax',
+    expiresInDays: 25,
+  },
+  public: {
+    redirectOnLoggedIn: '/dashboard',
+    redirectOnLoggedOut: '/',
+  },
+}
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'auth-module',
@@ -42,22 +59,7 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt: '>=3.0.0',
     },
   },
-  defaults: {
-    issuer: 'not-set',
-    audience: 'not-set',
-    refreshTokenExpirationTime: '28 days',
-    accessTokenExpirationTime: '5 min',
-    refreshCookie: {
-      name: 'refresh_token',
-      secure: true,
-      sameSite: 'lax',
-      expiresInDays: 25,
-    },
-    public: {
-      redirectOnLoggedIn: '/dashboard',
-      redirectOnLoggedOut: '/',
-    },
-  },
+  defaults,
   setup(inlineOptions, nuxt) {
     if (isDevelopmentMode()) {
       inlineOptions.refreshCookie.secure = false
