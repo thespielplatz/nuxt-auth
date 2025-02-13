@@ -6,6 +6,7 @@ import '@nuxt/schema'
 import type { Nuxt } from 'nuxt/schema'
 
 import { isDevelopmentMode } from './runtime/server/utils/isDevelopmentMode'
+import { addConsolaPrefix } from './runtime/lib/addConsolaPrefix'
 
 declare module '@nuxt/schema' {
   interface RuntimeConfig {
@@ -78,7 +79,7 @@ export default defineNuxtModule<ModuleOptions>({
 })
 
 const registerAll = (nuxt: Nuxt) => {
-  consola.info('Auth Module: Setup')
+  consola.info(addConsolaPrefix('Setup'))
 
   const { resolve } = createResolver(import.meta.url)
 

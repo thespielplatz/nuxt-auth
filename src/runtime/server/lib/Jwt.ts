@@ -3,6 +3,7 @@ import path from 'node:path'
 import type { KeyObject } from 'node:crypto'
 import consola from 'consola'
 import * as jose from 'jose'
+import { addConsolaPrefix } from '../../lib/addConsolaPrefix'
 
 const Algorithm_RSA256 = 'RS256'
 const PUBLIC_KEY_FILENAME = 'auth.pem.pub'
@@ -25,7 +26,7 @@ export default class Jwt {
 
     let keyPair: KeyPair
     if (!fs.existsSync(privateKeyFile)) {
-      consola.success(`Generating new JWT Private Key at ${keyPath}`)
+      consola.success(addConsolaPrefix(`Generating new JWT Private Key at ${keyPath}`))
       fs.mkdirSync(keyPath, { recursive: true })
       keyPair = await jose.generateKeyPair(Algorithm_RSA256)
       const spkiPem = await jose.exportSPKI(keyPair.publicKey)
@@ -39,7 +40,7 @@ export default class Jwt {
         publicKey: await jose.importSPKI(publicKeyFileData, Algorithm_RSA256),
         privateKey: await jose.importPKCS8(privateKeyFileData, Algorithm_RSA256),
       }
-      consola.info(`Loaded JWT keys from at ${keyPath}`)
+      consola.info(addConsolaPrefix(`Loaded JWT keys from at ${keyPath}`))
     }
 
     return new Jwt(keyPair)
