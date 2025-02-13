@@ -6,6 +6,9 @@
   "repository": "github:thespielplatz/nuxt-auth",
   "license": "MIT",
   "type": "module",
+  "workspaces": [
+    "playground"
+  ],
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
