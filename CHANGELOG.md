@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v1.0.1
+
+[compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v1.0.0...v1.0.1)
+
+### 💅 Refactors
+
+- Declare defaults seperate ([b63e18e](https://github.com/thespielplatz/nuxt-auth/commit/b63e18e))
+- **playground:** Import module via package.json dependency ([39a6ae2](https://github.com/thespielplatz/nuxt-auth/commit/39a6ae2))
+- **consola:** Add consola prefix ([9a5202d](https://github.com/thespielplatz/nuxt-auth/commit/9a5202d))
+
+### 📖 Documentation
+
+- Remove link spaces in badges ([08858dd](https://github.com/thespielplatz/nuxt-auth/commit/08858dd))
+
+### 📦 Build
+
+- Remove some linter rules ([b1925cb](https://github.com/thespielplatz/nuxt-auth/commit/b1925cb))
+
+### 🏡 Chore
+
+- Update packages ([cce7013](https://github.com/thespielplatz/nuxt-auth/commit/cce7013))
+
+### ❤️ Contributors
+
+- Thespielplatz <informatics@gmx.net>
+
 ## v0.0.13
 
 [compare changes](https://github.com/thespielplatz/nuxt-auth/compare/v0.0.12...v0.0.13)
